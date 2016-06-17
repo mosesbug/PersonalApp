@@ -30,8 +30,8 @@ Template.comments.events({
 Template.commentRow.events({
 	"click .js-delete-comment": function(event){
 		console.log("clicked on the x");
-		console.dir(this);
+		console.dir(this.comment);
 		
-		Comments.remove({_id:this.comment_id});
+		Comments.remove({_id:this.comment._id});
 	}
 })

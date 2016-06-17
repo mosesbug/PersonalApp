@@ -2,18 +2,29 @@
 <div class ="jumbotron">
 	<h1>Your Goals</h1>	
 </div>
-<h2>New Goal</h2>	
-Description: <input type="text" name="js-descr"><br><br>
-Made at: <input type="text" name="js-start"><br><br>
-Due by: <input type="text" name="js-end"><br><br>
-Completed: <input type="checkbox" class="js-completed"><br><br>
+	
+{{#if currentUser}}
+	<h2>New Goal</h2>	
+	Description: <input type="text" class="js-descr"><br><br>
+	Due by:      <input type="text" class="js-end"><br><br>
 
-<button class="js-submit-goal btn btn-lg btn-info">Submit new goal</button>
+	<button class="js-submit-goal btn btn-lg btn-info">Submit new goal</button>
+{{else}}
+	<h2>Please log in to make goals!!!!</h2>
+{{/if}}
 <hr>
+<h3>Current Goals</h3>
+<br>
 <ol>
-	{{#each goal in goals}}
-		<li>'{{goal.descr}}' by {{goal.end}} (Goal was made at {{goal.start}})</li>
+	{{#each g in goals}}
+		{{> goalRow goal=g}}
 	{{/each}}
 </ol>
 
+</template>
+
+<template name="goalRow">
+	<li>'{{goal.descr}}' by {{goal.end}} (Goal was made at {{goal.start}} by {{goal.userEmail}})
+		<span class="js-delete-goal glyphicon glyphicon-remove" aria-hidden="true"></span>
+	</li>
 </template>
