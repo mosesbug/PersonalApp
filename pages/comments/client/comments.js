@@ -21,8 +21,8 @@ Template.comments.events({
 		console.dir(comment_obj);
 
 		Comments.insert(comment_obj);
+		//Router.go("/commentSubmit");
 		$(".js-user-comment").val("");
-		//Router.go('/');
 	}
 
 })
@@ -31,7 +31,7 @@ Template.commentRow.events({
 	"click .js-delete-comment": function(event){
 		console.log("clicked on the x");
 		console.dir(this);
-		//const = comment_id = $(".glyphicon").val();
-		Comments.remove(this.comment_id);
+		
+		Comments.remove({_id:this.comment_id});
 	}
 })
