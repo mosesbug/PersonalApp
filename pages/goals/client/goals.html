@@ -24,7 +24,11 @@
 </template>
 
 <template name="goalRow">
-	<li>'{{goal.descr}}' by {{goal.end}} (Goal was made at {{goal.start}} by {{goal.userEmail}})
+	<li><a href="/showgoals/{{goal._id}}">'{{goal.descr}}' by {{goal.end}}</a>
 		<span class="js-delete-goal glyphicon glyphicon-remove" aria-hidden="true"></span>
 	</li>
+</template>
+
+<template name="showgoals">
+	<h4>Goal was made by {{userEmail}}</h4>
 </template>
