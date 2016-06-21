@@ -20,7 +20,8 @@ Template.comments.events({
 		userEmail: Meteor.user().emails[0].address};
 		console.dir(comment_obj);
 
-		Comments.insert(comment_obj);
+		Meteor.call("createComment", comment_obj)
+		//Comments.insert(comment_obj);
 		//Router.go("/commentSubmit");
 		$(".js-user-comment").val("");
 	}
@@ -32,6 +33,7 @@ Template.commentRow.events({
 		console.log("clicked on the x");
 		console.dir(this.comment);
 		
-		Comments.remove({_id:this.comment._id});
+		Meteor.call("removeComment", this.comment)
+		//Comments.remove({_id:this.comment._id});
 	}
 })

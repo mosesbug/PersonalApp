@@ -22,7 +22,8 @@ Template.goals.events({
 		{descr: descr, start: new Date, end: end, userEmail: Meteor.user().emails[0].address}
 		console.dir(current_goal);
 
-		Goals.insert(current_goal)
+		//Goals.insert(current_goal)
+		Meteor.call("createGoal", current_goal);
 		$(".js-descr").val("");
 		$(".js-end").val("");
 	}
@@ -33,6 +34,7 @@ Template.goalRow.events({
 	"click .js-delete-goal": function(event){
 		console.log("clicked on the x");
 		console.dir(this.goal);
-		Goals.remove({_id:this.goal._id});
+		Meteor.call("removeGoal", this.goal)
+		//Goals.remove({_id:this.goal._id});
 	}
 })
