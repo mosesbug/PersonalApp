@@ -1,4 +1,5 @@
 <template name="home">
+<div class="{{theColor}}">
 	<h1 class = bg-success>Your Goal-Based Daily Planner</h1>
 	<br><br>
 	{{#if currentUser}}
@@ -8,7 +9,13 @@
 	{{else}}
 		Please log in!!!!!!!
 	{{/if}}<br>
+	<select class="js-color">
+		<option>bg-info</option>
+		<option>bg-warning</option>
+	</select><br>
 	Color: {{theColor}}<br>
 	Counter: {{theCounter}}<br>
-	<button class="js-pusher">Push me!</button>
+	<button class="js-pusher">Push me!</button><br>
+	<button class="js-reset">Reset count.</button>
+</div>
 </template>
