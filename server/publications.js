@@ -1,5 +1,2 @@
-Meteor.publish("theGoals",
-	function(){return Goals.find();})
-
-Meteor.publish("theComments",
-	function(){return Comments.find();})
+Meteor.publish("theUserProfiles",
+	function(){return UserProfiles.find();})

@@ -1,0 +1,14 @@
+<template name="profiles">
+{{#if currentUser}}	
+	<h1>All Profiles</h1>
+	<br>
+	<ol>
+	{{#each profile in userProfilesData}}
+		<li>{{profile.first}} {{profile.last}}, nickname: {{profile.nick}}, was born in {{profile.birth}} (email: {{profile.email}})</li>
+	{{/each}}
+	</ol>
+{{else}}
+	<h3>You must login to view user profiles.</h3>
+{{/if}}
+
+</template>

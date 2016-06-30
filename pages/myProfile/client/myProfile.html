@@ -1,0 +1,17 @@
+<template name="myProfile">
+	{{#if currentUser}}
+		<h3>Your Profile Information</h3><br>
+		First name: <input type="text" class="js-first"><br><br>
+		Last name: <input type="text" class="js-last"><br><br>
+		Nickname: <input type="text" class="js-nick"><br><br>
+		Email: <input type="text" class="js-email"><br><br>
+		Birth year: <input type="text" class="js-birth"><br><br>
+
+		<button class="js-submit-info btn btn-lg btn-info">Submit!</button>
+	{{else}}
+	<h2>Please login.</h2>
+	{{/if}}
+
+
+
+</template>
