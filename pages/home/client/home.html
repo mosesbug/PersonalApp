@@ -3,7 +3,16 @@
 	<h1 class = bg-success>Your Goal-Based Daily Planner</h1>
 	<br><br>
 	{{#if currentUser}}
-		Congratulations you logged in!
+		{{#if theGreeting}}
+			<h2>{{theGreeting}}</h2>
+		{{else}}
+			<h2>Congratulations you logged in!</h2>
+		{{/if}}
+		<br><br>
+		<input type="text" class="js-greeting" placeholder="custom greeting">
+		<button class="js-submit-greeting btn btn-lg btn-info">
+			Submit
+		</button>
 		<br><br>
 		<img src="http://mitsloan.mit.edu/student-blogs/mfin-2015/wp-content/uploads/sites/2/2015/03/Congratulations.jpg">
 	{{else}}

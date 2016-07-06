@@ -3,6 +3,7 @@ Template.home.onCreated(function() {
   this.state.setDefault({
     color: "bg-info",
     counter: 0,
+    greeting: "",
   });
   console.log("Creating the template");
   console.dir(this.state);
@@ -20,7 +21,13 @@ Template.home.helpers({
 	theCounter: function() {
 		const instance = Template.instance();
 		return instance.state.get("counter");
-	}
+	},
+
+	theGreeting: function() {
+		const instance = Template.instance();
+		return instance.state.get("greeting");
+	},
+
 
 })
 
@@ -34,5 +41,8 @@ Template.home.events({
 	},
 	"click .js-reset": function(event,instance) {
 		instance.state.set("counter", 0);
+	},
+	"click .js-submit-greeting": function(event,instance) {
+		instance.state.set("greeting", $(".js-greeting").val());
 	},
 })
