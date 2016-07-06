@@ -19,7 +19,7 @@ Template.goals.events({
 
 
 		const current_goal =
-		{descr: descr, start: new Date, end: end, userEmail: Meteor.user().emails[0].address, id: Meteor.userId()}
+		{descr: descr, start: new Date, end: end, userEmail: Meteor.user().emails[0].address}
 		console.dir(current_goal);
 
 		//Goals.insert(current_goal)
