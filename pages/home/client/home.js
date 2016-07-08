@@ -15,7 +15,6 @@ Template.home.helpers({
 		return instance.state.get("greeting");
 	},
 
-
 })
 
 Template.home.events({

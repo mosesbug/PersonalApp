@@ -1,5 +1,5 @@
 Template.comments.helpers({
-	comments: function(){return Comments.find({},{sort:{createdAt:-1}, limit:5})}
+	comments: function(){return Comments.find({},{sort:{createdAt:-1}, limit:10})}
 })
 
 Template.comments.events({
