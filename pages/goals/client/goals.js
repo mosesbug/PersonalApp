@@ -38,6 +38,17 @@ Template.goalRow.events({
 	"click .js-delete-goal": function(event){
 		console.log("clicked on the x");
 		console.dir(this.goal);
+		Meteor.call("archiveGoal", this.goal)
+		Meteor.call("removeGoal", this.goal)
+		//Goals.remove({_id:this.goal._id});
+	}
+})
+
+Template.myGoalRow.events({
+	"click .js-delete-goal": function(event){
+		console.log("clicked on the x");
+		console.dir(this.goal);
+		Meteor.call("archiveGoal", this.goal)
 		Meteor.call("removeGoal", this.goal)
 		//Goals.remove({_id:this.goal._id});
 	}

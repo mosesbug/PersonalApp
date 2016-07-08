@@ -1,0 +1,24 @@
+<template name ="myoldgoals">
+<div class ="jumbotron">
+	<h1>Your Archived Goals</h1>	
+</div>
+	
+{{#if currentUser}}
+
+	<ol>
+		{{#each oldGoal in myOldGoals}}
+			{{> myOldGoalRow goal=oldGoal}}
+		{{/each}}
+	</ol>
+{{else}}
+	<h2>Please log in to make goals.</h2>
+{{/if}}
+
+
+</template>
+
+<template name="myOldGoalRow">
+	<li>'{{goal.descr}}' by {{goal.end}} (Made at {{goal.start}})
+		
+	</li>
+</template>

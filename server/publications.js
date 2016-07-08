@@ -3,3 +3,6 @@ Meteor.publish("theGoals",
 
 Meteor.publish("theComments",
 	function(){return Comments.find();})
+
+Meteor.publish("theOldGoals",
+	function(){return OldGoals.find();})
