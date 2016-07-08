@@ -1,6 +1,10 @@
 Template.goals.helpers({
 	goals:function(){
 		return Goals.find();
+	},
+
+	myGoals:function(){
+		return Goals.find({'userEmail': Meteor.user().emails[0].address});
 	}
 })
 
@@ -19,7 +23,7 @@ Template.goals.events({
 
 
 		const current_goal =
-		{descr: descr, start: new Date, end: end, userEmail: Meteor.user().emails[0].address}
+		{descr: descr, start: new Date, end: end, userEmail: Meteor.user().emails[0].address, id: Meteor.userId()}
 		console.dir(current_goal);
 
 		//Goals.insert(current_goal)
