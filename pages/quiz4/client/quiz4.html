@@ -1,0 +1,36 @@
+<template name="quiz4">
+	<h1>Quiz 4</h1>
+	<h4>By Moses Bug</h4>
+	<div class="row">
+		<div class="col-md-5 bg-info"><h2>Update your bio below</h2>
+			<br>
+			Name:<input type="text" class="js-name"><br>
+			Bio:<br>
+			<textarea rows="4" cols="50" class="js-bio"></textarea><br>
+			<button class="js-submit-bio btn btn-md">
+				Submit Bio
+			</button>
+		</div>
+		
+		<div class="col-md-5 bg-warning"><h2>or select a bio to view</h2>
+			<br><br>
+			<ul>
+				{{#each b in bios}}
+				{{> bioRow bio=b}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</template>
+
+<template name="bioRow">
+	<li><a href="/showbios/{{bio._id}}">{{bio.name}}</a>
+	</li>
+</template>
+
+<template name="showbios">
+	<div class="jumbotron">
+		<h1>{{name}}</h1><br>
+		<h3>{{bio}}</h3>
+	</div>
+</template>
